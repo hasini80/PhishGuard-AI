@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhishGuard AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- APP HEADER -->
+    <header class="navbar">
+
+        <div class="brand">
+            <div class="brand-icon">🛡️</div>
+
+            <div>
+                <h2>PhishGuard <span>AI</span></h2>
+                <p>Smart URL Security</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Scan</a>
+            <a href="#">History</a>
+            <a href="#">About</a>
+        </nav>
+
+        <div class="security-status">
+            <span></span>
+            Protection Active
+        </div>
+
+    </header>
+
+
+    <!-- MAIN APP -->
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="badge">
+                ✨ AI-POWERED SECURITY
+            </div>
+
+            <h1>
+                Protect yourself from
+                <span>dangerous links.</span>
+            </h1>
+
+            <p>
+                Analyze suspicious URLs using AI-powered detection,
+                security rules and blockchain verification.
+            </p>
+
+        </section>
+
+
+        <!-- URL SCANNER -->
+        <section class="scanner-card">
+
+            <div class="scanner-header">
+
+                <div>
+                    <h2>🔍 Scan a URL</h2>
+
+                    <p>
+                        Paste a website link below to check whether
+                        it is safe or suspicious.
+                    </p>
+                </div>
+
+                <div class="scan-icon">
+                    🛡️
+                </div>
+
+            </div>
+
+
+            <div class="url-input-area">
+
+                <div class="url-input">
+
+                    <span>🔗</span>
+
+                    <input
+                        type="text"
+                        id="url"
+                        placeholder="https://example.com"
+                    >
+
+                </div>
+
+                <button id="scanButton">
+                    Analyze URL
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+            <div class="examples">
+
+                <span>Try an example:</span>
+
+                <button onclick="useExample('https://example.com')">
+                    Safe URL
+                </button>
+
+                <button onclick="useExample('https://example.com/login-wallet')">
+                    Suspicious URL
+                </button>
+
+                <button onclick="useExample('https://blockchain-phishing-demo.com')">
+                    Blockchain Demo
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+        <section id="resultSection" class="result-section hidden">
+
+            <div class="section-title">
+                <h2>Security Analysis</h2>
+                <span>Latest Scan</span>
+            </div>
+
+
+            <div class="result-grid">
+
+                <!-- RISK CARD -->
+                <div class="risk-card">
+
+                    <div class="risk-top">
+                        <span>Risk Level</span>
+                        <span id="riskIcon">🟢</span>
+                    </div>
+
+                    <h1 id="riskText">LOW</h1>
+
+                    <p id="riskDescription">
+                        No major threats detected.
+                    </p>
+
+                    <div class="score-container">
+
+                        <div class="score-label">
+                            <span>Risk Score</span>
+                            <strong id="scoreText">0/100</strong>
+                        </div>
+
+                        <div class="score-bar">
+                            <div id="scoreBar"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANALYSIS CARD -->
+                <div class="analysis-card">
+
+                    <h3>🤖 Security Analysis</h3>
+
+                    <p id="analysisText">
+                        Enter a URL to begin the security analysis.
+                    </p>
+
+                    <div class="analysis-items">
+
+                        <div>
+                            <span>🔎</span>
+                            <p>
+                                <strong>URL Analysis</strong>
+                                <br>
+                                Suspicious patterns
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>⛓️</span>
+                            <p>
+                                <strong>Blockchain Check</strong>
+                                <br>
+                                Phishing registry
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- REASONS -->
+            <div class="reasons-card">
+
+                <h3>⚠️ Detection Details</h3>
+
+                <div id="reasons">
+                    No analysis yet.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECURITY FEATURES -->
+        <section class="features">
+
+            <div class="section-title">
+
+                <div>
+                    <h2>How PhishGuard protects you</h2>
+                    <p>Multiple layers of URL security.</p>
+                </div>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">🤖</div>
+
+                    <h3>AI Analysis</h3>
+
+                    <p>
+                        Analyzes URL patterns and suspicious
+                        characteristics.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">🗄️</div>
+
+                    <h3>Phishing Database</h3>
+
+                    <p>
+                        Checks domains against known phishing
+                        websites.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">⛓️</div>
+
+                    <h3>Blockchain Security</h3>
+
+                    <p>
+                        Verifies suspicious domains using a
+                        tamper-resistant registry.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div>
+            🛡️ <strong>PhishGuard AI</strong>
+        </div>
+
+        <p>
+            Intelligent protection against phishing attacks.
+        </p>
+
+        <span>
+            Security • AI • Blockchain
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
